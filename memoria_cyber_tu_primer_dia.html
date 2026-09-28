@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memoria Cyber — Tu primer día en Internet</title>
+<style>
+:root{--bg:#07111f;--panel:#0d1c30;--text:#f5f8ff;--muted:#aabdd1;--cyan:#36d9ff;--blue:#5d7cff;--green:#36e69b;--red:#ff617c;--yellow:#ffd166;--purple:#b57cff}
+*{box-sizing:border-box}body{margin:0;color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;min-height:100vh;background:radial-gradient(circle at 15% 10%,#153e5b 0,transparent 30%),radial-gradient(circle at 85% 15%,#2c2050 0,transparent 28%),linear-gradient(145deg,#050c17,#09182a 55%,#07101d)}
+button{font:inherit}.app{width:min(1120px,94%);margin:auto;padding:18px 0 45px}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:14px}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brandIcon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--cyan),var(--blue));font-size:1.35rem}.stats{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.stat{padding:8px 12px;border:1px solid #ffffff1c;border-radius:12px;background:#0c1b2e;color:var(--muted);font-size:.88rem}.stat b{color:white}.progress{height:7px;background:#132337;border-radius:99px;overflow:hidden;margin-bottom:18px}.progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple));transition:.5s}.screen{display:none}.screen.active{display:block}.panel{background:linear-gradient(160deg,rgba(17,41,67,.97),rgba(9,25,43,.97));border:1px solid #ffffff1c;border-radius:26px;box-shadow:0 25px 70px #0007;padding:27px}.hero{text-align:center;padding:48px 25px}.heroIcon{font-size:4.2rem}h1{font-size:clamp(2.1rem,5vw,3.7rem);line-height:1;margin:10px 0}h2{margin:0 0 7px;font-size:clamp(1.5rem,3vw,2.2rem)}h3{margin:0 0 6px}.sub{color:var(--muted);line-height:1.6;max-width:720px;margin:0 auto}.story{max-width:760px;text-align:left;margin:25px auto;padding:19px;border-radius:18px;background:#36d9ff0b;border:1px solid #36d9ff2b;line-height:1.6}.story strong{color:var(--cyan)}.row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:13px;padding:12px 19px;color:white;font-weight:900;cursor:pointer;transition:.18s}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.primary{background:linear-gradient(135deg,#25c9ed,#5b70fa)}.levelHead{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:17px}.tag{display:inline-block;padding:6px 10px;border-radius:99px;background:#36d9ff12;border:1px solid #36d9ff2c;color:#baf3ff;font-weight:900;font-size:.75rem}.badge{padding:8px 11px;border-radius:99px;background:#b57cff12;color:#decaff;font-size:.8rem;font-weight:900}.layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);gap:17px}.memoryInfo{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:15px}.memoryInfo p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.4}.board{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.card{height:145px;perspective:900px;cursor:pointer}.inner{height:100%;position:relative;transform-style:preserve-3d;transition:transform .45s}.card.open .inner,.card.matched .inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;padding:13px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid #ffffff1c}.back{background:linear-gradient(145deg,#142f4c,#0e2036);font-size:2rem;color:var(--cyan);flex-direction:column;gap:5px}.back small{font-size:.68rem;color:#7895b1;font-weight:800}.front{transform:rotateY(180deg);background:linear-gradient(145deg,#183a58,#112942);flex-direction:column;gap:7px}.front.concept{background:linear-gradient(145deg,#183e5c,#132e4c)}.front.definition{background:linear-gradient(145deg,#243052,#172942)}.front .emoji{font-size:2rem}.front b{font-size:.88rem}.front p{margin:0;color:#c7d8e9;font-size:.78rem;line-height:1.35}.matched .front{border-color:#36e69b99;box-shadow:0 0 22px #36e69b18}.side{padding:20px;border-radius:20px;background:#06132388;border:1px solid #ffffff1c}.mission{padding:14px;border-radius:15px;background:#ffd1660b;border:1px solid #ffd16622;line-height:1.5;color:#dce9f5;margin-top:12px}.feedback{display:none;margin-top:12px;padding:13px;border-radius:14px;line-height:1.5}.feedback.show{display:block}.feedback.ok{background:#36e69b0d;border:1px solid #36e69b33}.feedback.bad{background:#ff617c0d;border:1px solid #ff617c33}.challenge{display:none;margin-top:14px;padding:18px;border-radius:18px;background:#081728;border:1px solid #ffffff1c}.challenge.show{display:block}.question{font-weight:900;line-height:1.45;margin:8px 0 13px}.options{display:grid;gap:9px}.option{text-align:left;border:1px solid #ffffff1c;border-radius:12px;background:#122a44;color:#eef6ff;padding:12px;cursor:pointer}.option:hover{border-color:#36d9ff77}.option.correct{border-color:#36e69b99;background:#36e69b12}.option.wrong{border-color:#ff617c99;background:#ff617c12}.explain{color:var(--muted);font-size:.9rem;line-height:1.5;margin-top:12px}.map{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:15px}.map div{padding:10px 4px;text-align:center;border:1px solid #ffffff1c;border-radius:12px;color:#7991a9;font-size:.72rem}.map .current{color:white;border-color:#36d9ff66;background:#36d9ff0c}.map .done{color:#bff7df;border-color:#36e69b55;background:#36e69b08}.final{text-align:center}.score{font-size:3.4rem;font-weight:900;color:var(--cyan);margin:12px 0 0}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.item{padding:15px;border-radius:16px;background:#091a2d;border:1px solid #ffffff1c;text-align:center}.item .big{font-size:1.9rem}.item p{color:var(--muted);font-size:.78rem;line-height:1.4}.pedia{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:15px}.pedia div{padding:16px;text-align:left;background:#091a2d;border:1px solid #ffffff1c;border-radius:16px}.pedia b{display:block;margin:5px 0}.pedia p{margin:0;color:var(--muted);font-size:.82rem;line-height:1.45}.toast{position:fixed;right:18px;bottom:18px;max-width:330px;padding:14px 16px;background:#102944;border:1px solid #36d9ff55;border-radius:15px;box-shadow:0 20px 50px #0008;transform:translateY(120px);opacity:0;transition:.3s}.toast.show{transform:none;opacity:1}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.pedia{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.app{width:96%}.top{flex-direction:column;align-items:flex-start}.stats{justify-content:flex-start}.board{grid-template-columns:repeat(3,1fr)}.card{height:135px}.grid{grid-template-columns:repeat(2,1fr)}.levelHead{flex-direction:column}}@media(max-width:400px){.board{gap:7px}.card{height:118px}.face{padding:7px}.front .emoji{font-size:1.5rem}.front b{font-size:.73rem}.front p{font-size:.66rem}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="top">
+<div class="brand"><div class="brandIcon">🛡️</div>Memoria Cyber</div>
+<div class="stats">
+<div class="stat">⭐ <b id="score">0</b></div>
+<div class="stat">❤️ <b id="lives">3</b></div>
+<div class="stat">🔥 <b id="streak">0</b></div>
+<div class="stat">📚 <b id="level">1/5</b></div>
+</div>
+</div>
+<div class="progress"><i id="bar"></i></div>
+
+<section id="start" class="screen active">
+<div class="panel hero">
+<div class="heroIcon">🧠🔐</div>
+<h1>Tu primer día en Internet</h1>
+<p class="sub">Una aventura de memoria y decisiones para aprender ciberseguridad de verdad.</p>
+<div class="story"><strong>¿Cómo funciona?</strong><br><br>En cada nivel encontrarás parejas que tienen una relación lógica.<br><br><strong>🎣 Phishing</strong> ↔ <strong>💡 Engaño que intenta obtener información</strong><br><br>Después de completar la memoria tendrás que aplicar lo aprendido en una situación real.</div>
+<div class="row"><button class="btn primary" onclick="startGame()">🚀 Comenzar</button></div>
+</div>
+</section>
+
+<section id="game" class="screen">
+<div class="levelHead">
+<div><span class="tag" id="tag">NIVEL 1</span><h2 id="title"></h2><p class="sub" id="subtitle" style="text-align:left"></p></div>
+<span class="badge">🔥 Racha x<span id="streakHead">0</span></span>
+</div>
+<div class="layout">
+<div class="panel">
+<div class="memoryInfo"><div><h3>🃏 Relaciona las ideas</h3><p>Encuentra cada <b>concepto</b> y su <b>explicación correcta</b>.</p></div><div class="tag" id="pairs">0/3</div></div>
+<div id="board" class="board"></div>
+</div>
+<aside class="side">
+<h3>🎯 Tu misión</h3>
+<div class="mission" id="mission"></div>
+<div id="feedback" class="feedback"></div>
+<div id="challenge" class="challenge">
+<span class="tag">DESAFÍO</span>
+<div class="question" id="question"></div>
+<div class="options" id="options"></div>
+<div class="explain" id="explain"></div>
+</div>
+</aside>
+</div>
+<div class="map" id="map"></div>
+</section>
+
+<section id="finish" class="screen">
+<div class="panel final">
+<div class="heroIcon">🏆</div>
+<h1>¡Día completado!</h1>
+<p class="sub">Ahora sabes relacionar conceptos de ciberseguridad con situaciones reales.</p>
+<div class="score" id="finalScore">0</div><div style="color:var(--muted)">puntos</div>
+<div class="grid" id="medals"></div>
+<div style="margin-top:28px"><h2>📚 Cyberpedia</h2><p class="sub">Los conocimientos que aprendiste.</p></div>
+<div class="pedia" id="pedia"></div>
+<div class="row"><button class="btn primary" onclick="startGame()">🔄 Volver a jugar</button></div>
+</div>
+</section>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const levels=[
+{title:"Protege tu cuenta 🔐",subtitle:"Las primeras decisiones para proteger una cuenta.",mission:"Relaciona cada herramienta o concepto con lo que realmente hace.",pairs:[
+["password","🔐","Contraseña","Una combinación secreta que permite proteger el acceso a una cuenta."],
+["2fa","📲","Autenticación 2FA","Añade una segunda comprobación además de la contraseña."],
+["privacy","🔒","Privacidad","Controlar qué información personal compartes y con quién."]],
+challenge:{q:"Creas una cuenta nueva. ¿Qué combinación es más segura?",opts:["Contraseña única + autenticación 2FA","La misma contraseña que usas en todas tus cuentas","Compartir tu contraseña con un amigo"],answer:0,info:"Una contraseña única reduce el impacto de una filtración y 2FA añade otra capa de protección."}},
+{title:"Detecta las trampas 🎣",subtitle:"No todo mensaje urgente es verdadero.",mission:"Relaciona cada señal de riesgo con lo que significa antes de tomar una decisión.",pairs:[
+["phishing","🎣","Phishing","Engaño que intenta obtener información mediante mensajes o sitios falsos."],
+["urgent","⚠️","Urgencia sospechosa","Presionarte para actuar inmediatamente puede ser una señal de engaño."],
+["link","🔗","Enlace sospechoso","Un enlace puede llevar a una página falsa diseñada para robar información."]],
+challenge:{q:"Recibes un mensaje: “Tu cuenta será cerrada HOY. Haz clic aquí”. ¿Qué haces?",opts:["Hago clic inmediatamente","Entro al sitio oficial escribiendo su dirección o usando la aplicación","Reenvío el enlace a mis amigos"],answer:1,info:"Si tienes dudas, evita el enlace del mensaje y verifica desde una fuente oficial."}},
+{title:"Protege tu dispositivo 📱",subtitle:"Mantén el dispositivo actualizado y descarga con cuidado.",mission:"Relaciona cada protección con la función que cumple.",pairs:[
+["update","🔄","Actualización","Puede corregir vulnerabilidades y mejorar la seguridad del dispositivo."],
+["antivirus","🛡️","Antivirus","Ayuda a detectar o bloquear determinados programas maliciosos."],
+["download","📥","Descarga segura","Obtener aplicaciones desde fuentes confiables reduce el riesgo de malware."]],
+challenge:{q:"Una aplicación aparece gratis en una página desconocida. ¿Qué haces?",opts:["La instalo porque es gratis","Busco la aplicación en una fuente oficial y verifico el desarrollador","Desactivo las protecciones para instalarla"],answer:1,info:"Las fuentes desconocidas pueden distribuir archivos maliciosos. Comprueba siempre el origen."}},
+{title:"Navega con seguridad 🌐",subtitle:"Aprende a evaluar conexiones, sitios y datos personales.",mission:"Relaciona cada elemento con el hábito de navegación que corresponde.",pairs:[
+["https","🔐","HTTPS","Cifra la conexión entre tu navegador y el sitio, aunque no demuestra por sí solo que el sitio sea confiable."],
+["wifi","📶","Wi-Fi público","En una red pública conviene tener especial cuidado con operaciones sensibles."],
+["personal","👤","Datos personales","Información que puede identificarte o describirte y debe compartirse con cuidado."]],
+challenge:{q:"Estás conectado a una red Wi-Fi pública y necesitas hacer una operación bancaria. ¿Qué es más prudente?",opts:["Hacerla sin comprobar nada","Esperar a una conexión de confianza o usar tu conexión móvil","Pedir a otra persona su contraseña bancaria"],answer:1,info:"Para operaciones sensibles, una conexión de confianza o una conexión móvil propia puede ser una opción más prudente."}},
+{title:"Compra de forma segura 🛒",subtitle:"Antes de pagar, comprueba la tienda y la oferta.",mission:"Relaciona cada concepto con la señal o práctica que te ayuda a comprar con más seguridad.",pairs:[
+["store","🛒","Tienda confiable","Conviene comprobar quién vende, las condiciones, la reputación y los datos del sitio."],
+["payment","💳","Pago seguro","Usa métodos confiables y evita enviar datos de pago por canales extraños."],
+["scam","🚨","Posible estafa","Una oferta imposible, presión y solicitudes extrañas son señales para detenerse y verificar."]],
+challenge:{q:"Un teléfono nuevo cuesta muchísimo menos que en todas las demás tiendas y te piden transferir dinero a una persona. ¿Qué haces?",opts:["Pago rápido antes de perder la oferta","Investigo la tienda, el vendedor y el método de pago antes de continuar","Mando una foto de mi documento para demostrar quién soy"],answer:1,info:"El precio extremo y un método de pago difícil de recuperar son motivos para investigar antes de pagar."}}
+];
+
+let score=0,lives=3,streak=0,levelIndex=0,matched=0,openCards=[],locked=false,challengeDone=false,startTime;
+const $=id=>document.getElementById(id);
+function shuffle(a){return a.sort(()=>Math.random()-.5)}
+function update(){ $("score").textContent=score;$("lives").textContent=lives;$("streak").textContent=streak;$("level").textContent=`${Math.min(levelIndex+1,5)}/5`;$("streakHead").textContent=streak;$("bar").style.width=`${levelIndex/5*100}%`;if(levels[levelIndex])$("pairs").textContent=`${matched}/${levels[levelIndex].pairs.length}` }
+function screen(id){document.querySelectorAll(".screen").forEach(e=>e.classList.remove("active"));$(id).classList.add("active")}
+function toast(message){const e=$("toast");e.textContent=message;e.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>e.classList.remove("show"),2200)}
+function startGame(){score=0;lives=3;streak=0;levelIndex=0;startTime=Date.now();update();screen("game");loadLevel()}
+function renderMap(){$("map").innerHTML=levels.map((l,i)=>`<div class="${i<levelIndex?"done":i===levelIndex?"current":""}">${i<levelIndex?"✓ ":""}Nivel ${i+1}<br>${l.title.split(" ")[0]}</div>`).join("")}
+function loadLevel(){
+const l=levels[levelIndex];matched=0;openCards=[];locked=false;challengeDone=false;
+$("tag").textContent=`NIVEL ${levelIndex+1}`;$("title").textContent=l.title;$("subtitle").textContent=l.subtitle;$("mission").textContent=l.mission;$("feedback").className="feedback";$("challenge").className="challenge";$("board").innerHTML="";renderMap();
+const cards=[];l.pairs.forEach(p=>{cards.push({id:p[0],kind:"concept",emoji:p[1],title:p[2],text:"Concepto"});cards.push({id:p[0],kind:"definition",emoji:"💡",title:"¿Qué significa?",text:p[3]})});
+shuffle(cards).forEach(card=>{
+const e=document.createElement("div");e.className="card";e.innerHTML=`<div class="inner"><div class="face back">🧠<small>MEMORIA CYBER</small></div><div class="face front ${card.kind}">${card.kind==="concept"?`<div class="emoji">${card.emoji}</div><b>${card.title}</b><p>Concepto</p>`:`<div class="emoji">💡</div><b>Explicación</b><p>${card.text}</p>`}</div></div>`;
+e.onclick=()=>flipCard(e,card);$("board").appendChild(e)});
+update()
+}
+function flipCard(element,card){if(locked||element.classList.contains("open")||element.classList.contains("matched")||openCards.length===2)return;element.classList.add("open");openCards.push({element,card});if(openCards.length===2){locked=true;setTimeout(checkMatch,550)}}
+function showFeedback(text,correct){$("feedback").innerHTML=text;$("feedback").className=`feedback show ${correct?"ok":"bad"}`}
+function checkMatch(){
+const a=openCards[0],b=openCards[1];
+if(a.card.id===b.card.id&&a.card.kind!==b.card.kind){
+a.element.classList.add("matched");b.element.classList.add("matched");matched++;score+=100;streak++;
+const pair=levels[levelIndex].pairs.find(x=>x[0]===a.card.id);
+showFeedback(`✅ <strong>¡Pareja correcta!</strong><br><b>${pair[2]}</b>: ${pair[3]}`,true);
+if(streak%3===0){score+=50;toast("🔥 Racha de 3: +50 puntos")}
+openCards=[];locked=false;update();
+if(matched===levels[levelIndex].pairs.length)setTimeout(showChallenge,700)
+}else{
+score=Math.max(0,score-10);streak=0;showFeedback("❌ No forman una pareja.<br>Busca un concepto y su explicación correspondiente.",false);
+setTimeout(()=>{a.element.classList.remove("open");b.element.classList.remove("open");openCards=[];locked=false;update()},850)
+}}
+function showChallenge(){
+const c=levels[levelIndex].challenge;$("challenge").classList.add("show");$("question").textContent=c.q;$("explain").textContent="";
+$("options").innerHTML=c.opts.map((o,i)=>`<button class="option" onclick="answerChallenge(${i},this)">${o}</button>`).join("");
+$("challenge").scrollIntoView({behavior:"smooth",block:"nearest"})
+}
+function answerChallenge(index,button){
+if(challengeDone)return;const c=levels[levelIndex].challenge;
+if(index===c.answer){
+challengeDone=true;button.classList.add("correct");score+=250;streak++;
+$("explain").innerHTML=`<strong style="color:var(--green)">✅ Correcto.</strong> ${c.info}`;
+document.querySelectorAll(".option").forEach(o=>o.disabled=true);update();toast("🎯 Desafío superado: +250");setTimeout(nextLevel,1300)
+}else{
+button.classList.add("wrong");lives--;streak=0;$("explain").innerHTML=`<strong style="color:var(--red)">❌ Esa no es la opción más segura.</strong> ${c.info}`;update();
+if(lives<=0){lives=3;score=Math.max(0,score-100);toast("❤️ Recuperaste tus vidas. ¡Usa el error para aprender!");update()}
+}}
+function nextLevel(){levelIndex++;if(levelIndex>=levels.length){finishGame();return}loadLevel()}
+function finishGame(){
+const seconds=Math.floor((Date.now()-startTime)/1000),timeBonus=Math.max(0,500-seconds*2);score+=timeBonus;$("finalScore").textContent=score;$("bar").style.width="100%";renderMedals();renderCyberpedia();screen("finish")
+}
+function renderMedals(){
+const medals=[["🧠","Memoria con sentido","Relacionaste conceptos con sus explicaciones."],["🎣","Detective digital","Aprendiste a identificar señales de engaño."],["🛡️","Guardián digital","Aprendiste hábitos para proteger cuentas y dispositivos."],["🏆","Primer día seguro","Completaste los 5 niveles de la aventura."]];
+$("medals").innerHTML=medals.map(m=>`<div class="item"><div class="big">${m[0]}</div><b>${m[1]}</b><p>${m[2]}</p></div>`).join("")
+}
+function renderCyberpedia(){
+const topics=[["🔐","Contraseñas","Largas, únicas y difíciles de adivinar."],["📲","2FA","Añade una segunda comprobación al iniciar sesión."],["🎣","Phishing","Engaños que buscan que entregues información o hagas clic."],["🦠","Malware","Software malicioso que puede afectar un dispositivo."],["🔄","Actualizaciones","Pueden corregir vulnerabilidades de seguridad."],["🌐","Navegación","Verifica sitios, enlaces y solicitudes antes de actuar."],["🛒","Compras","Investiga la tienda, el vendedor y el método de pago."],["🔒","Privacidad","Comparte solo los datos necesarios con fuentes confiables."]];
+$("pedia").innerHTML=topics.map(t=>`<div><span style="font-size:1.8rem">${t[0]}</span><b>${t[1]}</b><p>${t[2]}</p></div>`).join("")
+}
+update();
+</script>
+</body>
+</html>
